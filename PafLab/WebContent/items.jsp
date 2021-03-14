@@ -13,6 +13,17 @@ if (request.getParameter("itemCode") != null)
 	request.getParameter("itemDesc"));
 	session.setAttribute("statusMsg", stsMsg);
 }
+
+//delete item
+
+if (request.getParameter("itemID") != null)
+{
+ item itemObj = new item();
+ String stsMsg = itemObj.deleteItem(request.getParameter("itemID"));
+ session.setAttribute("statusMsg", stsMsg);
+}
+
+
 %>
 
 <!DOCTYPE html>
